@@ -1,6 +1,6 @@
 pipeline {
     agent {
-    	docker { image 'node:16' }  // available at- https://hub.docker.com/_/node
+    	docker { image 'node:16' } 
     }
 
     stages {
