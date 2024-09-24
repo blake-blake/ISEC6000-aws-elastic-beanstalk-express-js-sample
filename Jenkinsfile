@@ -7,7 +7,7 @@ pipeline {
     	stage('Dependency Install') {
 	    steps {
 	    	sh 'npm install --save' 
-	    	snykSecurity organisation: 'Curtin-ISEC6000', projectName: '18821260_Project2_pipeline', severity: 'critical', snykInstallation: 'Please define a Snyk installation in the Jenkins Global Tool Configuration. This task will not run without a Snyk installation.', snykTokenId: 'organisation-snyk-api-token'
+	    	snykSecurity organisation: 'Curtin-ISEC6000', projectName: '18821260_Project2_pipeline', severity: 'critical', snykInstallation: 'snyk@latest', snykTokenId: 'organisation-snyk-api-token'
 	    }
 	}    
         stage('Build') {
