@@ -8,7 +8,7 @@ pipeline {
 	    steps {
 	    	sh 'npm install --save' 
 	    	snykSecurity(
-			projectName: '18821260_Project2_pipeline', severity: 'critical', snykInstallation: 'snyk-latest', snykTokenId: 'organisation-snyk-api-token', targetFile: 'package.json'
+			projectName: '18821260_Project2_pipeline', severity: 'critical', snykInstallation: 'snyk@latest', snykTokenId: 'organisation-snyk-api-token', targetFile: 'package.json'
 	    	)
 	    }
 	}    
