@@ -2,7 +2,7 @@ pipeline {
     agent {
     	docker { 
 		image 'node:16' 
-		args '--network isec6000-project2-compose_jenkins_to_docker -p 8081:8081'
+		//args '--network isec6000-project2-compose_jenkins_to_docker -p 8081:8081'
 	} 
     }
 
