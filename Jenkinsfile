@@ -31,7 +31,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-		
+		sh 'cat app.js'
                 // sh 'npm test'
             }
         }
