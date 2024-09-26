@@ -2,7 +2,7 @@ pipeline {
     agent {
     	docker { 
 		image 'node:16' 
-		args '-p 8081:8081'
+		args '--network jenkins_to_docker'
 	} 
     }
 
