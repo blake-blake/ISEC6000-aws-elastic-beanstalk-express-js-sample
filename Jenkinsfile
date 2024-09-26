@@ -2,7 +2,7 @@ pipeline {
     agent {
     	docker { 
 		image 'node:16' 
-		args '--network jenkins_to_docker'
+		args '--network jenkins_to_docker -p 8081:8081'
 	} 
     }
 
@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		sh 'node app.js'
+		sh 'node app.js & sleep 5'
 		//sh 'npm up'
 		//sh 'npm start'
 		//sh 'sleep 1'
