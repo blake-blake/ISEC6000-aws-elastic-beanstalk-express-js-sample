@@ -11,10 +11,12 @@ pipeline {
     stages {
     	stage('Dependency Install') {
 	    steps {
-	    	sh 'npm install --save' 
-		    'npm install -g snyk'
-		    'snyk auth ${SNYK_API_TOKEN}'
-		    'snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical'
+	    	sh '''
+      			npm install --save
+		    	npm install -g snyk
+		    	snyk auth ${SNYK_API_TOKEN}
+		    	snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical
+       		'''
 	    }
 	}    
         stage('Build') {
