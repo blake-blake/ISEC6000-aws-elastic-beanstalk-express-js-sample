@@ -2,7 +2,8 @@ pipeline {
     agent {
     	docker { 
 		image 'node:16' 
-		//args '--network isec6000-project2-compose_jenkins_to_docker -p 8081:8081'
+		//args '--network isec6000-project2-compose_jenkins_to_docker 
+		args '-p 8081:8081'
 	} 
     }
 
@@ -37,7 +38,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		sh 'node app.js & sleep 5'
+		sh 'node app.js &'
+		sleep 5
 		//sh 'npm up'
 		//sh 'npm start'
 		//sh 'sleep 1'
