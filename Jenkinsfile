@@ -38,8 +38,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-		sh 'node app.js &'
-		sleep 5
+		sh 'node app.js'
+		//sleep 5
 		//sh 'npm up'
 		//sh 'npm start'
 		//sh 'sleep 1'
