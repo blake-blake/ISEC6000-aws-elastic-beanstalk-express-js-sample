@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        SNYK_API_TOKEN = credentials('organisation-snyk-api-token')  
+        SNYK_API_TOKEN = credentials('secret-snyk-api-token')  
     }
 
 	
