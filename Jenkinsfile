@@ -36,7 +36,7 @@ pipeline {
         stage('Deploy') {
             steps {
           
-	    	sh 'npm run build'
+	    	
 		
 		sh 'npm start &'
 		sh 'sleep 1'
