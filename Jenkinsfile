@@ -29,12 +29,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+		
                 // sh 'npm test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+		sh 'npm start'
                 // sh 'npm run build'
                 // sh 'npm start'
                 // input message: 'Finished using the web site? (Click "Proceed" to continue)' 
