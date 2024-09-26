@@ -12,12 +12,9 @@ pipeline {
     	stage('Dependency Install') {
 	    steps {
 	    	sh 'npm install --save' 
-
-		sh 'npm install -g snyk'
-
-		sh 'snyk auth ${SNYK_API_TOKEN}'
-
-		sh 'snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical'
+		    'npm install -g snyk'
+		    'snyk auth ${SNYK_API_TOKEN}'
+		    'snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical'
 	    }
 	}    
         stage('Build') {
@@ -35,11 +32,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-
-		sh 'npm up'
-		
-		sh 'npm start'
-		sh 'sleep 1'
+		sh 'node app.js'
+		//sh 'npm up'
+		//sh 'npm start'
+		//sh 'sleep 1'
 	
             }
         }
