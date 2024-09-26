@@ -56,7 +56,7 @@ pipeline {
 		set -x
 		npm start &
 		sleep 1
-		echo $! > .pidfile
+		REM: echo $! > .pidfile
 		set +x
 		
 		echo 'Now...'
