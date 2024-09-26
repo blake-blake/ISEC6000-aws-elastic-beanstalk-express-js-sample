@@ -1,6 +1,9 @@
 pipeline {
     agent {
-    	docker { image 'node:16' } 
+    	docker { 
+		image 'node:16' 
+		args '-p 8081:8081'
+	} 
     }
 
     environment {
