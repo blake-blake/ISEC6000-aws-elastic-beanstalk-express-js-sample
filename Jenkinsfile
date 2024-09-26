@@ -2,8 +2,7 @@ pipeline {
     agent {
     	docker { 
 		image 'node:16' 
-		//args '--network isec6000-project2-compose_jenkins_to_docker 
-		args '-p 8081:8081'
+		args '-p 8081:8081' // bind port from docker to localhost:8081
 	} 
     }
 
@@ -33,16 +32,14 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'cat app.js'
-                // sh 'npm test'
+           
             }
         }
         stage('Deploy') {
             steps {
-		sh 'node app.js'
-		//sleep 5
-		//sh 'npm up'
-		//sh 'npm start'
-		//sh 'sleep 1'
+		sh 'node app.js &'
+		sleep 5
+		
 	
             }
         }
