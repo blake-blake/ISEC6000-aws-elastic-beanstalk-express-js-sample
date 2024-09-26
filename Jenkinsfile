@@ -35,10 +35,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-          
-	    	
+
+		sh 'npm up'
 		
-		sh 'npm start &'
+		// sh 'npm start &'
 		sh 'sleep 1'
 	
             }
