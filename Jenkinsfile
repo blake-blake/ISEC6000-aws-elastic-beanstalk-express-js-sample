@@ -3,13 +3,21 @@ pipeline {
     	docker { image 'node:16' } 
     }
 
+    environment {
+        SNYK_API_TOKEN = credentials('organisation-snyk-api-token')  
+    }
+
+	
     stages {
     	stage('Dependency Install') {
 	    steps {
 	    	sh 'npm install --save' 
-	    	snykSecurity(
-			projectName: '18821260_Project2_pipeline', severity: 'critical', snykInstallation: 'snyk-latest', snykTokenId: 'organisation-snyk-api-token', targetFile: 'package.json'
-	    	)
+
+		sh 'npm install -g snyk'
+
+		sh 'snyk auth ${SNYK_API_TOKEN}'
+
+		sh 'snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical'
 	    }
 	}    
         stage('Build') {
