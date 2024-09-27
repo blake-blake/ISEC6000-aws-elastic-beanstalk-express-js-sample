@@ -18,7 +18,7 @@ pipeline {
       			npm install --save
 		    	npm install -g snyk
 		    	snyk auth ${SNYK_API_TOKEN}
-		    	snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical
+		    	// snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical
        		'''
 	    }
 	}    
@@ -33,6 +33,7 @@ pipeline {
                 echo 'Testing..'
 		sh 'cat app.js'
 		// npm test
+		sh 'snyk test --org=blake-blake --project-name=18821260_Project2_pipeline --severity-threshold=critical'
            
             }
         }
