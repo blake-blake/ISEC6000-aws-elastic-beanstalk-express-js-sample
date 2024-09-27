@@ -2,7 +2,7 @@ pipeline {
     agent {
     	docker { 
 		image 'node:16' 
-		args '-p 8081:8081' // bind port from docker to localhost:8081
+		args '-p 8081:8081' // bind port from app.js in docker to localhost:8081
 	} 
     }
 
@@ -32,6 +32,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'cat app.js'
+		// npm test
            
             }
         }
